@@ -41,11 +41,6 @@ const tasksSlice = createSlice({
       state.tasks = state.tasks.filter(task => task.id !== taskId);
       deleteTaskFromDB(taskId);
     },
-    addTask: (state, action) => {
-      const task = action.payload;
-      addTaskToDB(task);
-      state.tasks.push(task);
-    },
     updateTask: (state, action) => {
       const updatedTask = action.payload;
       const taskIndex = state.tasks.findIndex(task => task.id === updatedTask.id);
